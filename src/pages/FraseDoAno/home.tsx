@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react'
 
-import { getFraseDoAnoApi } from '@/services/FraseDoAnoService/api'
+import { getFraseDoAnoApi, postFraseDoAnoApi } from '@/services/FraseDoAnoService/api'
 import { FraseDoAnoListProps } from '@/services/FraseDoAnoService/types'
 
 export default function ConsultarFrases () {
   const [frases, setFrases] = useState <FraseDoAnoListProps[]>([])
+  const [phrase, setPhrase] = useState('')
+  const [observation, seObservation] = useState('')
 
+  async function CadastrarFrase () {
+    const teste = await postFraseDoAnoApi(phrase, observation)
+    if (!teste) {
+      alert('erro')
+    }
+    alert('Frase cadastrada')
+  }
   async function GetAllFrase () {
     const resp = await getFraseDoAnoApi()
     setFrases(resp.data)
@@ -43,6 +52,11 @@ export default function ConsultarFrases () {
           </table>
         </div>
       </div>
+      <div>
+        <input value={phrase} onChange={e => setPhrase(e.target.value)} type='text' placeholder='Frase' />
+        <input value={observation} onChange={e => seObservation(e.target.value)} type='text' placeholder='Observacao' />
+      </div>
+      <div> <button onClick={CadastrarFrase}> Cadastrar </button> </div>
     </main>
   )
 }
