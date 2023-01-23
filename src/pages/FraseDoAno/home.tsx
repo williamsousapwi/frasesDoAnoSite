@@ -107,11 +107,13 @@ export default function ConsultarFrases () {
           onChange={e => setFiltro(e.target.value)}
           onKeyPress={e => e.key === 'Enter' ? Filtrar() : ''}
         />
+
         <button
           onClick={Filtrar}
           onKeyPress={e => e.key === 'Enter' ? Filtrar() : ''}
         >Consultar
         </button>
+
       </div>
 
       <section className='F1-Card'>

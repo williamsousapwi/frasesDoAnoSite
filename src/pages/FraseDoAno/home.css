@@ -36,16 +36,26 @@ background-repeat: no-repeat;
 }
 
 .Card-F1 button{
-    width:8em;
-    height: 2.4em;
+    width:7em;
+    height: 2.5em;
     color: black;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 7px;
     border: solid 2px #015587;
     cursor: pointer;
     font-family: 'Inter-Semi-Bold';
     opacity: 0.6;
+    margin-left: 12px;
+    font-size: 13px;
 }
+
+.Card-F1 button:hover{
+    transition: 0.5s; 
+    color: black;
+    opacity: 1;
+
+  }
+
 
 /**** CODIGOS CSS PRIMEIRO CARD(BRANCO)***/
 .F1-Card{
@@ -84,18 +94,18 @@ justify-content: space-around;
 
 .Card-F1 input{
     border-radius: 7px;
-    border: solid 2px #015587;
     width: 25em;
     height: 2.0em;
     font-family: 'Inter-Semi-Bold';
     font-size: 15px;
-    background-image: url('../../../public/Assets/Imgs/pesquisa.png');
-    background-repeat: no-repeat;
-    background-position: 98%;
-    background-size: 7%;
-
+    border: none;
 }
 
+
+
+input{
+    outline: none;
+}
 .F1-Card  h1{
     font-family: 'Inter-Bold';
     color: #286090;
@@ -113,7 +123,7 @@ justify-content: space-around;
 
 .Card-F2:hover{
     width:30em ;
-    transition: 2.0s;
+    transition: 0.5s;
 }
 
 .Card-F2-h4{
@@ -133,6 +143,8 @@ justify-content: space-around;
 .Card-F2 img{
     cursor: pointer;
     margin-right: 5px;
+    width: 28px;
+    height: 28px;
 }
 
 .H4-Inclusion{
@@ -188,7 +200,7 @@ justify-content: space-around;
 .Card-2 button{
     width:8em;
     height: 2.4em;
-    color: #fff;
+    color: white;
     background-color: #286090;
     border-radius: 15px;
     border: solid 2px #015587;
@@ -204,12 +216,12 @@ justify-content: space-around;
     }
 
 
-button:hover{
+.Card-2 button:hover{
   transition: 1.0s; 
-  color: #fff;
+  color: white;
   opacity: 1;
-
 }
+
 
 .Frase-Do-Ano-text:hover{
     transition: 1.5s; 
@@ -225,4 +237,9 @@ button:hover{
 @font-face {
     font-family: 'Inter-Semi-Bold';
     src: url(../../../public/Assets/Fonts/Inter-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: 'WebDings';
+    src: url(../../../public/Assets/Fonts/Webdings-Regular.ttf)
 }
