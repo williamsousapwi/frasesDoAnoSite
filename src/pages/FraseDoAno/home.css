@@ -1,0 +1,228 @@
+.Main {
+    display: flex;
+    flex-direction: column;
+    background-color: #C6DAEB;
+    height: 100vh;
+    align-items: center;
+}
+
+/**** CODIGOS CSS PRIMEIRA FAIXA (FAIXA ANTES DO CARD BRANCO)****/
+.Faixa1{
+    width: 28em;
+    height: 2.8em;
+    text-align: center;
+}
+
+.Faixa-IMG{
+    height:3vh;
+    width: 100vw;
+}
+
+.Faixa1-Logo{
+background-image: url(../../../public/Assets/Imgs/Frases_Do_ano-removebg-preview\ 1.svg);    
+background-repeat: no-repeat;
+    display: flex;
+    margin-right: 20px;
+    height: 150px;
+    width: 150px;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.Faixa1 h1{
+    color: white;
+    font-size: 25px;
+    font-family: 'Inter-Bold';
+}
+
+.Card-F1 button{
+    width:8em;
+    height: 2.4em;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Semi-Bold';
+    opacity: 0.6;
+}
+
+/**** CODIGOS CSS PRIMEIRO CARD(BRANCO)***/
+.F1-Card{
+    display: flex;
+    background-color: white;
+    width: 35em;
+    height: 39em;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll
+}
+
+.F1-Card::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 5px;
+    border: 1px  solid black;
+    background-color: #386D9B;
+}
+.F1-Card::-webkit-scrollbar-thumb{
+    background-color: #A4DDFF;
+    border-radius: 5px;
+}
+
+
+.Card-F1{
+margin-bottom: 10px;
+ width:32em ;
+height:2em ;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+
+
+}
+
+.Card-F1 input{
+    border-radius: 7px;
+    border: solid 2px #015587;
+    width: 25em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 15px;
+    background-image: url('../../../public/Assets/Imgs/pesquisa.png');
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-size: 7%;
+
+}
+
+.F1-Card  h1{
+    font-family: 'Inter-Bold';
+    color: black;
+}
+
+/**** CODIGOS CSS SEGUNDO CARD (CARDS AZUIS QUE AGRUPAM A FRASE,OBSERVAÇÃO, DATA, E IMAGENS )****/
+
+.Card-F2{
+    margin-top: 10px;
+    height:6em ;
+    width:28em ;
+    background-color: #709CC2;
+    border-radius: 7px;
+}
+
+.Card-F2:hover{
+    width:30em ;
+    transition: 2.0s;
+}
+
+.Card-F2-h4{
+    margin-bottom: 2px;
+    color: white;  
+    font-family: 'Inter-Semi-Bold';
+    margin-left: 5px;
+
+}
+.Card-F2 div{
+    display: flex;
+    justify-content: flex-end;   
+    align-items: flex-end;
+    margin-top: 5px;
+}
+
+.Card-F2 img{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.H4-Inclusion{
+    font-size: 12px;
+    color:  black;
+    display: flex;
+    justify-content: flex-end;   
+    font-family: 'Inter-Semi-Bold';
+    margin: 5px;
+
+}
+
+.Faixa-2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.Card-2{
+    display: flex;
+    background-color: white;
+    width: 35em;
+    height: 10em;
+    border-radius: 8px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.Card-2 input{
+    border-radius: 7px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.Card-2-Faixa-1 h1{
+    font-family: 'Inter-Bold';
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.Card-2-Faixa-2{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Card-2 button{
+    width:8em;
+    height: 2.4em;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Semi-Bold';
+    opacity: 0.6;
+}
+
+.Card-2-Faixa-3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+
+button:hover{
+  transition: 1.0s; 
+  color: #015587;
+  opacity: 1;
+
+}
+
+.Frase-Do-Ano-text:hover{
+    transition: 1.5s; 
+    font-size: 30px;
+}
+/**** FONTS USADAS****/
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-Bold.ttf)
+}
+
+@font-face {
+    font-family: 'Inter-Semi-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-SemiBold.ttf)
+}
