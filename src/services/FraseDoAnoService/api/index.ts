@@ -1,13 +1,25 @@
 import HttpBase from '@/services/HttpBase'
 
-import { FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory } from '../factory'
+import { FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory, FrasesDoAnoListApiToFrontFactorybyName } from '../factory'
 // import { FraseDoAnoListProps } from '../types'
 
 export const getFraseDoAnoApi = async () =>
   await HttpBase.get('FrasesDoAno', { transformResponse: transformResponseAdapter(FrasesDoAnoListApiToFrontFactory) })
 
+export const getFraseDoAnoNameApi = async (phrase: string) =>
+  await HttpBase.get(`FrasesDoAno?frase=${phrase}`, { transformResponse: transformResponseAdapter(FrasesDoAnoListApiToFrontFactorybyName) })
+
+export const getFraseDoAnoIdApi = async (id: number) =>
+  await HttpBase.get(`FrasesDoAno/${id}`)
+
 export const postFraseDoAnoApi = async (phrase: string, observation: string) =>
   await HttpBase.post('FrasesDoAno', FrasesDoAnoFrontToApiFactory(phrase, observation))
+
+export const deleteFraseDoAnoApi = async (id: number) =>
+  await HttpBase.delete(`FrasesDoAno/${id}`)
+
+export const putFraseDoAnoApi = async (id: number, phrase: string, observation: string) =>
+  await HttpBase.put(`FrasesDoAno/${id}`, FrasesDoAnoFrontToApiFactory(phrase, observation))
 
 export const replaceUndefinedForNull = (data: any) => {
   if (!data) return null
@@ -38,7 +50,7 @@ export const transformResponseAdapter = <T, U>(transformerFactory: (data: T) => 
     try {
       return replaceUndefinedForNull(transformerFactory(data))
     } catch (error: any) {
-      throw new Error(`Erro ao tratar os dados retornados pela Api.\n\tDetalhes: ${error.message}`)
+      throw new Error('Erro ao tratar os dados retornados pela Api.\n\tDetalhes: ')
     }
   }
   if (!contentType || contentType.includes('application/problem+json')) return dataParsed // Error Api

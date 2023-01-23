@@ -1,7 +1,7 @@
 .Main {
     display: flex;
     flex-direction: column;
-    background-color: #C6DAEB;
+    background-color: #286090;
     height: 100vh;
     align-items: center;
 }
@@ -98,7 +98,7 @@ justify-content: space-around;
 
 .F1-Card  h1{
     font-family: 'Inter-Bold';
-    color: black;
+    color: #286090;
 }
 
 /**** CODIGOS CSS SEGUNDO CARD (CARDS AZUIS QUE AGRUPAM A FRASE,OBSERVAÇÃO, DATA, E IMAGENS )****/
@@ -174,7 +174,7 @@ justify-content: space-around;
 
 .Card-2-Faixa-1 h1{
     font-family: 'Inter-Bold';
-    color: black;
+    color: #286090;
     display: flex;
     justify-content: center;
 }
@@ -188,8 +188,8 @@ justify-content: space-around;
 .Card-2 button{
     width:8em;
     height: 2.4em;
-    color: black;
-    background-color: white;
+    color: #fff;
+    background-color: #286090;
     border-radius: 15px;
     border: solid 2px #015587;
     cursor: pointer;
@@ -206,7 +206,7 @@ justify-content: space-around;
 
 button:hover{
   transition: 1.0s; 
-  color: #015587;
+  color: #fff;
   opacity: 1;
 
 }
