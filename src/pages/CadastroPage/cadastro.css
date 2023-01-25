@@ -1,0 +1,136 @@
+.Main-Cadastro{
+    height: 671px;
+    width: 1365px;
+    max-width: 1365px;
+    max-height: 768px;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../../public/Assets/Imgs/351885.jpg');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items:center;
+}
+
+.Card-Central-Cadastro{
+    background-color:white;
+    height: 450px;
+    width: 600px;
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Faixa1-Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:10px ;
+}
+.Faixa1-Card h1{
+    font-family: 'Inter-Semi-Bold';
+    color:#015587;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.Faixa-Imagem{
+    height: 200px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.ImagemCadastro{
+    background-image: url(../../../public/Assets/Imgs/cadastro\ 1.svg     );
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+}
+
+.Faixa2-Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Input-Usuario-Cadastro{
+    border-radius: 8px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-image: url(../../../public/Assets/Imgs/seguranca\ 1.svg);
+}
+
+.Input-Senha-Cadastro{
+    border-radius: 7px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-image: url(../../../public/Assets/Imgs/round-account-button-with-user-inside_icon-icons.com_72596.png);
+}
+
+.Input-Nome-Cadastro{
+    border-radius: 8px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-image: url(../../../public/Assets/Imgs/key-silhouette-security-tool-interface-symbol-of-password_icon-icons.com_54503.png);
+}
+
+.Faixa3-Card{
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.Faixa3-Card button{
+    height: 2.8em;
+    margin-top: 5px;
+    width: 8em;
+    color: black;
+    background-color: white;
+    border-radius: 7px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Bold';
+    opacity: 0.6;
+    font-size: 15px;
+}
+
+.Faixa3-Card button:hover{
+    transition: 0.5s; 
+    color: black;
+    opacity: 1;
+  }
+/*FONTES A SEREM USADAS */
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-Bold.ttf)
+}
+
+@font-face {
+    font-family: 'Inter-Semi-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: 'WebDings';
+    src: url(../../../public/Assets/Fonts/Webdings-Regular.ttf)
+}

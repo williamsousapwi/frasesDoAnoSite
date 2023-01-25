@@ -1,0 +1,122 @@
+/*MAIN DA PAGE */
+.Main-Login{
+    height: 671px;
+    width: 1365px;
+    max-width: 1365px;
+    max-height: 768px;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../../public/Assets/Imgs/351885.jpg');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items:center;
+}
+
+/*CARD CENTRAL */
+.Card-Central{
+    background-color:white;
+    height: 450px;
+    width: 600px;
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Faixa-Central-1{
+    margin-top: 2em;
+    height:200px ;
+    width: 600px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.ImagemEntrar{
+    background-image: url(../../../public/Assets/Imgs/conecte-se\ 1.svg     );
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    margin-left: 12.5em;
+}
+
+.Faixa-Central-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Input-Usuario{
+    border-radius: 8px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-image: url(../../../public/Assets/Imgs/seguranca\ 1.svg);
+}
+
+.Input-Senha{
+    border-radius: 7px;
+    border: solid 2px #015587;
+    width: 29em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-image: url(../../../public/Assets/Imgs/round-account-button-with-user-inside_icon-icons.com_72596.png);
+}
+
+
+.Faixa-Central-1 h1{
+    font-family: 'Inter-Semi-Bold';
+    color:#015587;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+
+.Faixa-3-Login{
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.Faixa-3-Login button{
+    height: 2.8em;
+    width: 8em;
+    color: black;
+    background-color: white;
+    border-radius: 7px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Bold';
+    opacity: 0.6;
+    font-size: 15px;
+    margin-left:5px; 
+}
+.Faixa-3-Login button:hover{
+    transition: 0.5s; 
+    color: black;
+    opacity: 1;
+  }
+/*FONTES A SEREM USADAS */
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-Bold.ttf)
+}
+
+@font-face {
+    font-family: 'Inter-Semi-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: 'WebDings';
+    src: url(../../../public/Assets/Fonts/Webdings-Regular.ttf)
+}
