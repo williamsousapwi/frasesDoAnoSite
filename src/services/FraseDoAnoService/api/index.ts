@@ -1,7 +1,13 @@
 import HttpBase from '@/services/HttpBase'
 
-import { FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory, FrasesDoAnoListApiToFrontFactorybyName } from '../factory'
+import { FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory, FrasesDoAnoListApiToFrontFactorybyName, FrasesDoAnoUserLoginToApi, FrasesDoAnoUserToApi } from '../factory'
 // import { FraseDoAnoListProps } from '../types'
+
+export const cadastrarUsuarioApi = async (name: string, login: string, password: string) =>
+  await HttpBase.post('Usuario/Cadastro', FrasesDoAnoUserToApi(name, login, password))
+
+export const LogarUsuarioApi = async (login: string, password: string) =>
+  await HttpBase.post('Usuario/Login', FrasesDoAnoUserLoginToApi(login, password))
 
 export const getFraseDoAnoApi = async () =>
   await HttpBase.get('FrasesDoAno', { transformResponse: transformResponseAdapter(FrasesDoAnoListApiToFrontFactory) })

@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react'
 import { confirmAlert } from 'react-confirm-alert'
 import { ToastContainer, toast } from 'react-toastify'
 
+import { useRouter } from 'next/router'
+
 import { deleteFraseDoAnoApi, getFraseDoAnoNameApi, postFraseDoAnoApi, putFraseDoAnoApi } from '@/services/FraseDoAnoService/api'
 import { FraseDoAnoListProps } from '@/services/FraseDoAnoService/types'
 import { DateHelper } from '@/utils/helpers'
 import { DateFomartTypes } from '@/utils/helpers/types'
+import * as storage from 'local-storage'
 
 export default function () {
+  const router = useRouter()
   const [frases, setFrases] = useState<FraseDoAnoListProps[]>([])
   const [phrase, setPhrase] = useState('')
   const [observation, setObservation] = useState('')
@@ -16,6 +20,11 @@ export default function () {
   const [loading, setLoading] = useState(false)
   const [exibirModal, setExibirModal] = useState<FraseDoAnoListProps|undefined>(undefined)
 
+  useEffect(() => {
+    if (!storage.get('usuario-logado')) {
+      router.push('http://localhost:3005/LoginPage/login')
+    }
+  }, [])
   // Filtro por frase
   async function Filtrar () {
     try {

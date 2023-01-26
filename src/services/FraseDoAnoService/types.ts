@@ -6,3 +6,8 @@ export interface FraseDoAnoListProps{
   inclusion: string
   alterationDate: string
 }
+export interface FraseDoAnoListCadastro {
+  name: string
+  login: string
+  password: string
+}
