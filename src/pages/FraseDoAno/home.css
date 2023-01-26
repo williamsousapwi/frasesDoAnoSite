@@ -1,5 +1,7 @@
 .Main {
     display: flex;
+    height: 100vh;
+    width: 100vw;
     flex-direction: column;
     background: linear-gradient(to right, rgb(5,53,101),rgb(14,82,131),rgb(17,103,160), rgb(19,119,178));    height: 100vh;
     align-items: center;
@@ -13,6 +15,7 @@
 }
 
 .Faixa-IMG{
+    height: 10px;
     display: flex;
     width: 100vw;
 }
@@ -47,7 +50,7 @@ background-repeat: no-repeat;
 }
 
 .Card-F1 button:hover{
-    transition: 0.5s; 
+    transition: 0.3s; 
     color: black;
     opacity: 1;
 
@@ -59,7 +62,7 @@ background-repeat: no-repeat;
     display: flex;
     background-color: white;
     width: 35em;
-    height: 39em;
+    height: 25em;
     border-radius: 8px;
     align-items: center;
     flex-direction: column;
@@ -117,7 +120,6 @@ input{
 }
 
 /**** CODIGOS CSS SEGUNDO CARD (CARDS AZUIS QUE AGRUPAM A FRASE,OBSERVAÇÃO, DATA, E IMAGENS )****/
-
 .Card-F2{
     margin-top: 10px;
     height:6em ;
@@ -156,7 +158,7 @@ input{
     justify-content: center;
 }
 
-.Card-F2 div{
+.Card-F2 > div{
     display: flex;
     justify-content: flex-end;   
     align-items: flex-end;
@@ -170,8 +172,8 @@ input{
     height: 28px;
 }
 
-.container {
-    background-color: rgba(0, 0, 0, .3);
+.container{
+    background-color: rgba(0, 0, 0, .4);
     position:fixed;
     top: 0;
     left: 0;
@@ -188,8 +190,8 @@ input{
     align-items: center;
     width: 100%;
     height: 100%;
-    max-height: 20em;
-    max-width: 650px;
+    max-height: 12em;
+    max-width: 480px;
     margin: 10% auto;
     padding: 20px;
     position: relative;
@@ -212,14 +214,17 @@ input{
     align-items: center;
 }
 
+.popup-div-Inputs{
+    flex-direction: column;
+}
 .popup input{
     border-radius: 7px;
     border: solid 2px #015587;
-    width: 20em;
+    width: 28em;
     height: 2.0em;
     font-family: 'Inter-Semi-Bold';
     font-size: 15px;
-    margin-left: 5px;
+    margin-top: 5px;
 }
 .popup button{
     width:8em;
@@ -245,7 +250,7 @@ input{
     font-size: 12px;
     color:  black;
     display: flex;
-    justify-content: flex-end;   
+    justify-content: flex-start;   
     font-family: 'Inter-Semi-Bold';
     margin: 5px;
 
@@ -311,19 +316,16 @@ input{
 
 
 .Card-2 button:hover{
-  transition: 1.0s; 
+  transition: 0.3s; 
   color: white;
   opacity: 1;
-}
-
-*{
-    border: solid red 1px;
-}
+}s
 
 .Frase-Do-Ano-text:hover{
     transition: 1.5s; 
     font-size: 30px;
 }
+
 /**** FONTS USADAS****/
 
 @font-face {

@@ -7,13 +7,14 @@ import { FraseDoAnoListProps } from '@/services/FraseDoAnoService/types'
 import { DateHelper } from '@/utils/helpers'
 import { DateFomartTypes } from '@/utils/helpers/types'
 
-export default function ConsultarFrases () {
+export default function () {
   const [frases, setFrases] = useState<FraseDoAnoListProps[]>([])
   const [phrase, setPhrase] = useState('')
   const [observation, setObservation] = useState('')
   const [id, setId] = useState(0)
   const [filtro, setFiltro] = useState('')
   const [loading, setLoading] = useState(false)
+  const [exibirModal, setExibirModal] = useState<FraseDoAnoListProps|undefined>(undefined)
 
   // Filtro por frase
   async function Filtrar () {
@@ -31,12 +32,13 @@ export default function ConsultarFrases () {
   async function CadastrarFrase () {
     try {
       await postFraseDoAnoApi(phrase, observation)
-      toast('Frase cadastrada')
+      toast('Frase Cadastrada! 😂😂')
       Filtrar()
     } catch (error: any) {
       toast.error(error.response.data)
     }
   }
+
   // Retorna a frase, id e observação para ser alterada
   async function RetornarFrase (id: number, phrase: string, observation: string) {
     setPhrase(phrase)
@@ -58,7 +60,7 @@ export default function ConsultarFrases () {
             } else {
               Filtrar()
             }
-            toast('Frase removida')
+            toast('Frase removida😅')
           }
         },
         {
@@ -67,14 +69,16 @@ export default function ConsultarFrases () {
       ]
     })
   }
+
   // Altera as informações da frase e observação.
   async function Alterar () {
     try {
-      if (!phrase) {
+      if (!exibirModal.phrase) {
         toast.error('Frase Obrigatória')
       } else {
-        await putFraseDoAnoApi(id, phrase, observation)
+        await putFraseDoAnoApi(exibirModal.id, exibirModal.phrase, exibirModal.observation)
         toast('Frase Alterada')
+        onPressClose()
       }
       Filtrar()
     } catch (error: any) {
@@ -86,15 +90,20 @@ export default function ConsultarFrases () {
   useEffect(() => {
     Filtrar()
   }, [])
+
+  function onPressEdit (frase: FraseDoAnoListProps) {
+    setExibirModal(frase)
+  }
+
+  function onPressClose () {
+    setExibirModal(undefined)
+  }
   return (
     <main className='Main'>
       <ToastContainer />
       <div className='Faixa-IMG'>
         <div className='Faixa1-Logo' />
       </div>
-      <section className='Faixa1'>
-        <h1 className='Frase-Do-Ano-text'>Frases do Ano (Projeto Piloto)</h1>
-      </section>
 
       <div className='Card-F1'>
         <div className='F1-Card-Pesquisa'>
@@ -129,18 +138,18 @@ export default function ConsultarFrases () {
             <h4 className='Card-F2-h4' title={item.observation}> Observação - {item.observation.length >= 35 ? item.observation.substring(0, 30) + '...' : item.observation} </h4>
             <h4 className='H4-Inclusion'> Data de Inclusão: {DateHelper.setDate(item.inclusion).format(DateFomartTypes.DateTimeInput)}</h4>
             <div>
-              <img src='/iconedit.svg' onClick={async () => await RetornarFrase(item.id, item.phrase, item.observation)} />
+              <img src='/iconedit.svg' onClick={() => onPressEdit(item)} />
               <img src='/icondelete.svg' alt='Remover ' onClick={async () => await RemoverFrase(item.id)} />
               <img src='/iconamei.svg' /* onClick={async () => await AmeiFunction(item.id)} */ />
 
-              <div className='container'>
+              <div className='container' style={{ display: !exibirModal ? 'none' : 'flex' }}>
                 <div className='popup'>
-                  <div className='popup-fechar'>r</div>
+                  <div className='popup-fechar' onClick={onPressClose}>r</div>
                   <div className='popup-content'>
                     <h1>Alterar Frase</h1>
-                    <div>
-                      <input value={phrase} onChange={e => setPhrase(e.target.value)} type='text' maxLength={50} placeholder='Frase' />
-                      <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observacao' />
+                    <div className='popup-div-Inputs'>
+                      <input value={exibirModal?.phrase} onChange={e => setExibirModal({ ...exibirModal, phrase: e.target.value })} type='text' maxLength={50} placeholder='Frase' />
+                      <input value={exibirModal?.observation} onChange={e => setExibirModal({ ...exibirModal, observation: e.target.value })} type='text' maxLength={250} placeholder='Observacao' />
                     </div>
                     <button onClick={Alterar}> Alterar </button>
                   </div>
@@ -157,7 +166,7 @@ export default function ConsultarFrases () {
           <div className='Card-2-Faixa-1'> <h1> Cadastrar nova Frase</h1> </div>
           <div className='Card-2-Faixa-2'>
             <input value={phrase} onChange={e => setPhrase(e.target.value)} type='text' maxLength={50} placeholder='Frase' />
-            <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observacao' />
+            <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observação' />
           </div>
           <div className='Card-2-Faixa-3'> <button onClick={CadastrarFrase}> Cadastrar </button>
           </div>
