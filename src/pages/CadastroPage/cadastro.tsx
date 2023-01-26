@@ -1,10 +1,11 @@
 export default function () {
   return (
-
     <main className='Main-Cadastro'>
+      <div className='Div-Imagem'> <div className='Logo-Imagem' /> </div>
+
       <section className='Card-Central-Cadastro'>
         <div className='Faixa1-Card'>
-          <h1>Frases do Ano Cadastrar </h1>
+          <h1>Cadastrar novo Usuario </h1>
           <div className='Faixa-Imagem'>
             <div className='ImagemCadastro' />
           </div>

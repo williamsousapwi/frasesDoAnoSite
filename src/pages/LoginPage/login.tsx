@@ -5,10 +5,11 @@ function RedirecionarParaCadastrar () {
 export default function () {
   return (
     <main className='Main-Login'>
+      <div className='Div-Imagem'> <div className='Logo-Imagem' /> </div>
       <section className='Faixa-2-Login'>
         <div className='Card-Central'>
           <div className='Faixa-Central-1'>
-            <h1>  Frases do Ano - Log In</h1>
+            <h1> Log In</h1>
             <div className='ImagemEntrar' />
           </div>
 

@@ -1,15 +1,25 @@
 /*MAIN DA PAGE */
 .Main-Login{
-    height: 671px;
-    width: 1365px;
-    max-width: 1365px;
-    max-height: 768px;
+    height: 100vh;
     display: flex;
-    flex-direction: row;
-    background-image: url('../../../public/Assets/Imgs/351885.jpg');
-    background-repeat: no-repeat;
-    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(5,53,101),rgb(14,82,131),rgb(17,103,160), rgb(19,119,178));
     align-items:center;
+}
+
+.Div-Imagem{
+    display: flex;
+    width: 100vw;
+}
+
+.Logo-Imagem{
+    background-image: url(../../../public/Assets/Imgs/Frases_Do_ano-removebg-preview\ 1.svg);    
+    background-repeat: no-repeat;
+    display: flex;
+    margin-right: 20px;
+    height: 150px;
+    width: 150px;
+    margin: -2em -2em;
 }
 
 /*CARD CENTRAL */
@@ -105,6 +115,8 @@
     color: black;
     opacity: 1;
   }
+
+
 /*FONTES A SEREM USADAS */
 @font-face {
     font-family: 'Inter-Bold';

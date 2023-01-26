@@ -1,8 +1,7 @@
 .Main {
     display: flex;
     flex-direction: column;
-    background-color: #286090;
-    height: 100vh;
+    background: linear-gradient(to right, rgb(5,53,101),rgb(14,82,131),rgb(17,103,160), rgb(19,119,178));    height: 100vh;
     align-items: center;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .Faixa-IMG{
-    height:3vh;
+    display: flex;
     width: 100vw;
 }
 
@@ -171,6 +170,76 @@ input{
     height: 28px;
 }
 
+.container {
+    background-color: rgba(0, 0, 0, .3);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content:center;
+    align-items:center;
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 20em;
+    max-width: 650px;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    border-radius: 7px;
+}
+.popup-fechar{
+    font-family: 'WebDings';
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.popup-content{
+    height:20em ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup input{
+    border-radius: 7px;
+    border: solid 2px #015587;
+    width: 20em;
+    height: 2.0em;
+    font-family: 'Inter-Semi-Bold';
+    font-size: 15px;
+    margin-left: 5px;
+}
+.popup button{
+    width:8em;
+    height: 2.4em;
+    color: white;
+    background-color: #286090;
+    border-radius: 15px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Semi-Bold';
+    opacity: 0.6;
+    
+}
+.popup button:hover{
+    transition: 1.0s; 
+    color: white;
+    opacity: 1;
+}
+
+
 
 .H4-Inclusion{
     font-size: 12px;
@@ -247,6 +316,9 @@ input{
   opacity: 1;
 }
 
+*{
+    border: solid red 1px;
+}
 
 .Frase-Do-Ano-text:hover{
     transition: 1.5s; 

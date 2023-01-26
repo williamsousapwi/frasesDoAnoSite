@@ -132,6 +132,21 @@ export default function ConsultarFrases () {
               <img src='/iconedit.svg' onClick={async () => await RetornarFrase(item.id, item.phrase, item.observation)} />
               <img src='/icondelete.svg' alt='Remover ' onClick={async () => await RemoverFrase(item.id)} />
               <img src='/iconamei.svg' /* onClick={async () => await AmeiFunction(item.id)} */ />
+
+              <div className='container'>
+                <div className='popup'>
+                  <div className='popup-fechar'>r</div>
+                  <div className='popup-content'>
+                    <h1>Alterar Frase</h1>
+                    <div>
+                      <input value={phrase} onChange={e => setPhrase(e.target.value)} type='text' maxLength={50} placeholder='Frase' />
+                      <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observacao' />
+                    </div>
+                    <button onClick={Alterar}> Alterar </button>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         )}
@@ -145,7 +160,6 @@ export default function ConsultarFrases () {
             <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observacao' />
           </div>
           <div className='Card-2-Faixa-3'> <button onClick={CadastrarFrase}> Cadastrar </button>
-            <button onClick={Alterar}> Alterar </button>
           </div>
         </div>
 
