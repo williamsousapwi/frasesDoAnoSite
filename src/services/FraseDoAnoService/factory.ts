@@ -1,4 +1,4 @@
-import { ApiFraseDoAnoCadastroProps, ApiFraseDoAnoListProps, apiFraseDoAnoCadastrarUsuarioProps, apiFraseDoAnoLoginUsuarioProps } from './api/types'
+import { ApiFraseDoAnoCadastroProps, ApiFraseDoAnoListProps, apiCadastroVotoProps, apiFraseDoAnoCadastrarUsuarioProps, apiFraseDoAnoLoginUsuarioProps, apiRemoverVotoProps } from './api/types'
 import { FraseDoAnoListCadastro, FraseDoAnoListProps } from './types'
 
 export const FrasesDoAnoListApiToFrontFactory = (data: ApiFraseDoAnoListProps): FraseDoAnoListProps => ({
@@ -7,7 +7,8 @@ export const FrasesDoAnoListApiToFrontFactory = (data: ApiFraseDoAnoListProps): 
   observation: data.observacao,
   inclusion: data.inclusao,
   alterationDate: data.alteracao,
-  inactive: data.inativo
+  inactive: data.inativo,
+  idVotation: data.idVotacao
 })
 
 export const FrasesDoAnoFrontToApiFactory = (phrase: string, observation: string): ApiFraseDoAnoCadastroProps => ({
@@ -21,7 +22,8 @@ export const FrasesDoAnoListApiToFrontFactorybyName = (data: ApiFraseDoAnoListPr
   observation: data.observacao,
   inclusion: data.inclusao,
   alterationDate: data.alteracao,
-  inactive: data.inativo
+  inactive: data.inativo,
+  idVotation: data.idVotacao
 })
 
 export const UsarioListApiToFrontFactory = (data: apiFraseDoAnoCadastrarUsuarioProps): FraseDoAnoListCadastro => ({
@@ -40,4 +42,12 @@ export const FrasesDoAnoUserToApi = (name: string, login: string, password: stri
 export const FrasesDoAnoUserLoginToApi = (login: string, password: string): apiFraseDoAnoLoginUsuarioProps => ({
   login: login,
   senha: password
+})
+
+export const FraseDoAnoVotoToApi = (idPhrase: number): apiCadastroVotoProps => ({
+  IdFrase: idPhrase
+})
+
+export const RemoverDoVotoToApi = (idVotation: number): apiRemoverVotoProps => ({
+  IdVotacao: idVotation
 })

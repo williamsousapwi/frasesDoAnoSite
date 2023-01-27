@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import { useRouter } from 'next/router'
 
-import { deleteFraseDoAnoApi, getFraseDoAnoNameApi, postFraseDoAnoApi, putFraseDoAnoApi } from '@/services/FraseDoAnoService/api'
+import { CadastrarVotoApi, RemoverVotoApi, deleteFraseDoAnoApi, getFraseDoAnoNameApi, postFraseDoAnoApi, putFraseDoAnoApi } from '@/services/FraseDoAnoService/api'
 import { FraseDoAnoListProps } from '@/services/FraseDoAnoService/types'
 import { DateHelper } from '@/utils/helpers'
 import { DateFomartTypes } from '@/utils/helpers/types'
@@ -15,10 +15,11 @@ export default function () {
   const [frases, setFrases] = useState<FraseDoAnoListProps[]>([])
   const [phrase, setPhrase] = useState('')
   const [observation, setObservation] = useState('')
-  const [id, setId] = useState(0)
   const [filtro, setFiltro] = useState('')
   const [loading, setLoading] = useState(false)
   const [exibirModal, setExibirModal] = useState<FraseDoAnoListProps|undefined>(undefined)
+  const [idDaFrase, SetIdDaFrase] = useState(0)
+  const [exibirCoracao, SetExibirCoracao] = useState(false)
 
   useEffect(() => {
     if (!storage.get('usuario-logado')) {
@@ -48,12 +49,28 @@ export default function () {
     }
   }
 
-  // Retorna a frase, id e observação para ser alterada
-  async function RetornarFrase (id: number, phrase: string, observation: string) {
-    setPhrase(phrase)
-    setObservation(observation)
-    setId(id)
+  // Cadastra um Voto na Frase
+  async function VotarNaFrase (idPhrase: number) {
+    try {
+      await CadastrarVotoApi(idPhrase)
+      SetExibirCoracao(true)
+      toast('Voto Realizado')
+      Filtrar()
+    } catch (error: any) {
+      toast.error(error.response.data)
+    }
   }
+
+  async function RemoverVoto (idVotation: number) {
+    try {
+      await RemoverVotoApi(idVotation)
+      SetExibirCoracao(false)
+      toast('Voto Removido')
+    } catch (error: any) {
+      toast.error(error.response.data)
+    }
+  }
+
   // Remove a frase pelo id que recebe ao clicar no icon.
   async function RemoverFrase (id: number) {
     confirmAlert({
@@ -149,7 +166,11 @@ export default function () {
             <div>
               <img src='/iconedit.svg' onClick={() => onPressEdit(item)} />
               <img src='/icondelete.svg' alt='Remover ' onClick={async () => await RemoverFrase(item.id)} />
-              <img src='/iconamei.svg' /* onClick={async () => await AmeiFunction(item.id)} */ />
+
+              {!exibirCoracao &&
+                <img src='/iconamei.svg' onClick={async () => await VotarNaFrase(item.id)} />}
+              {exibirCoracao &&
+                <img src='/iconameiVermelho.svg' onClick={async () => await RemoverVoto(item.idVotation)} />}
 
               <div className='container' style={{ display: !exibirModal ? 'none' : 'flex' }}>
                 <div className='popup'>

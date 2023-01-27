@@ -20,7 +20,7 @@ export default function () {
     try {
       const r = await LogarUsuarioApi(login, senha)
 
-      Storage('usuario-logado', r)
+      Storage('usuario-logado', r.data)
 
       setTimeout(() => {
         router.push('/FraseDoAno/home')

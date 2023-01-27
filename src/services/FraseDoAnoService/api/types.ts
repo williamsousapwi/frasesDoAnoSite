@@ -5,6 +5,7 @@ export interface ApiFraseDoAnoListProps{
   inativo: boolean
   inclusao: string
   alteracao: string
+  idVotacao: number
 }
 
 export interface ApiFraseDoAnoCadastroProps{
@@ -20,4 +21,12 @@ export interface apiFraseDoAnoCadastrarUsuarioProps{
 export interface apiFraseDoAnoLoginUsuarioProps{
   login: string
   senha: string
+}
+
+export interface apiCadastroVotoProps{
+  IdFrase: number
+}
+
+export interface apiRemoverVotoProps{
+  IdVotacao: number
 }
