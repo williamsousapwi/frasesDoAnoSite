@@ -18,8 +18,6 @@ export default function () {
   const [filtro, setFiltro] = useState('')
   const [loading, setLoading] = useState(false)
   const [exibirModal, setExibirModal] = useState<FraseDoAnoListProps|undefined>(undefined)
-  const [idDaFrase, SetIdDaFrase] = useState(0)
-  const [exibirCoracao, SetExibirCoracao] = useState(false)
 
   useEffect(() => {
     if (!storage.get('usuario-logado')) {
@@ -53,7 +51,6 @@ export default function () {
   async function VotarNaFrase (idPhrase: number) {
     try {
       await CadastrarVotoApi(idPhrase)
-      SetExibirCoracao(true)
       toast('Voto Realizado')
       Filtrar()
     } catch (error: any) {
@@ -64,8 +61,8 @@ export default function () {
   async function RemoverVoto (idVotation: number) {
     try {
       await RemoverVotoApi(idVotation)
-      SetExibirCoracao(false)
       toast('Voto Removido')
+      Filtrar()
     } catch (error: any) {
       toast.error(error.response.data)
     }
@@ -167,9 +164,9 @@ export default function () {
               <img src='/iconedit.svg' onClick={() => onPressEdit(item)} />
               <img src='/icondelete.svg' alt='Remover ' onClick={async () => await RemoverFrase(item.id)} />
 
-              {!exibirCoracao &&
+              {!item.idVotation &&
                 <img src='/iconamei.svg' onClick={async () => await VotarNaFrase(item.id)} />}
-              {exibirCoracao &&
+              {!!item.idVotation &&
                 <img src='/iconameiVermelho.svg' onClick={async () => await RemoverVoto(item.idVotation)} />}
 
               <div className='container' style={{ display: !exibirModal ? 'none' : 'flex' }}>
