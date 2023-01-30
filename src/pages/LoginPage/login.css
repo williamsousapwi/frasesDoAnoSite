@@ -30,6 +30,7 @@
     border-radius:8px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .Faixa-Central-1{
@@ -38,6 +39,8 @@
     width: 600px;
     border-radius: 7px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .ImagemEntrar{
@@ -45,8 +48,8 @@
     background-repeat: no-repeat;
     height: 200px;
     width: 200px;
-    margin-left: 12.5em;
 }
+
 
 .Faixa-Central-2{
     display: flex;
@@ -81,7 +84,7 @@
 }
 
 
-.Faixa-Central-1 h1{
+.Card-Central h1{
     font-family: 'Inter-Semi-Bold';
     color:#015587;
     font-size: 1.8em;
@@ -109,12 +112,27 @@
     opacity: 0.6;
     font-size: 15px;
     margin-left:5px; 
+    margin-bottom: 5px; ;
 }
 .Faixa-3-Login button:hover{
     transition: 0.5s; 
     color: black;
     opacity: 1;
   }
+
+  .Load{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
 
 /*FONTES A SEREM USADAS */

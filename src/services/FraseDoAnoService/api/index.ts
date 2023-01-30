@@ -1,9 +1,12 @@
 import HttpBase from '@/services/HttpBase'
 
-import { FraseDoAnoVotoToApi, FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory, FrasesDoAnoListApiToFrontFactorybyName, FrasesDoAnoUserLoginToApi, FrasesDoAnoUserToApi } from '../factory'
+import { FraseDoAnoVotoToApi, FrasesDoAnoFrontToApiFactory, FrasesDoAnoListApiToFrontFactory, FrasesDoAnoListApiToFrontFactorybyName, FrasesDoAnoUserLoginToApi, FrasesDoAnoUserToApi, RankingListApiToFrontFactory } from '../factory'
 
 export const CadastrarVotoApi = async (idPhrase: number) =>
   await HttpBase.post('votacao', FraseDoAnoVotoToApi(idPhrase))
+
+export const getRanking = async () =>
+  await HttpBase.get('Votacao/ranking', { transformResponse: transformResponseAdapter(RankingListApiToFrontFactory) })
 
 export const RemoverVotoApi = async (id: number) =>
   await HttpBase.delete(`votacao/${id}`)

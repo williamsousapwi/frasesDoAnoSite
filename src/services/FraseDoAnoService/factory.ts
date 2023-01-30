@@ -1,8 +1,9 @@
-import { ApiFraseDoAnoCadastroProps, ApiFraseDoAnoListProps, apiCadastroVotoProps, apiFraseDoAnoCadastrarUsuarioProps, apiFraseDoAnoLoginUsuarioProps, apiRemoverVotoProps } from './api/types'
-import { FraseDoAnoListCadastro, FraseDoAnoListProps } from './types'
+import { ApiFraseDoAnoCadastroProps, ApiFraseDoAnoListProps, ApiFraseDoAnoRankingListProps, apiCadastroVotoProps, apiFraseDoAnoCadastrarUsuarioProps, apiFraseDoAnoLoginUsuarioProps, apiRemoverVotoProps } from './api/types'
+import { FraseDoAnoListCadastro, FraseDoAnoListProps, FraseDoAnoRankingListProps } from './types'
 
 export const FrasesDoAnoListApiToFrontFactory = (data: ApiFraseDoAnoListProps): FraseDoAnoListProps => ({
   id: data.id,
+  creator: data.criador,
   phrase: data.frase,
   observation: data.observacao,
   inclusion: data.inclusao,
@@ -18,6 +19,7 @@ export const FrasesDoAnoFrontToApiFactory = (phrase: string, observation: string
 
 export const FrasesDoAnoListApiToFrontFactorybyName = (data: ApiFraseDoAnoListProps): FraseDoAnoListProps => ({
   id: data.id,
+  creator: data.criador,
   phrase: data.frase,
   observation: data.observacao,
   inclusion: data.inclusao,
@@ -50,4 +52,12 @@ export const FraseDoAnoVotoToApi = (idPhrase: number): apiCadastroVotoProps => (
 
 export const RemoverDoVotoToApi = (idVotation: number): apiRemoverVotoProps => ({
   IdVotacao: idVotation
+})
+
+export const RankingListApiToFrontFactory = (data: ApiFraseDoAnoRankingListProps): FraseDoAnoRankingListProps => ({
+  id: data.id,
+  creator: data.criador,
+  phrase: data.frase,
+  observation: data.observacao,
+  qtdVotes: data.qtdVotos
 })

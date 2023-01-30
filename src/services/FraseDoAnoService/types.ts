@@ -1,5 +1,6 @@
 export interface FraseDoAnoListProps{
   id: number
+  creator: string
   phrase: string
   observation: string
   inactive: boolean
@@ -19,4 +20,12 @@ export interface CadastrarVotoProps{
 
 export interface RemoverVotoProps{
   idVotation: number
+}
+
+export interface FraseDoAnoRankingListProps{
+  id: number
+  creator: string
+  phrase: string
+  observation: string
+  qtdVotes: number
 }

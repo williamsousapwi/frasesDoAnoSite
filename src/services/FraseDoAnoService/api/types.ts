@@ -1,5 +1,6 @@
 export interface ApiFraseDoAnoListProps{
   id: number
+  criador: string
   frase: string
   observacao: string
   inativo: boolean
@@ -29,4 +30,12 @@ export interface apiCadastroVotoProps{
 
 export interface apiRemoverVotoProps{
   IdVotacao: number
+}
+
+export interface ApiFraseDoAnoRankingListProps{
+  id: number
+  criador: string
+  frase: string
+  observacao: string
+  qtdVotos: number
 }

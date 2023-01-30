@@ -41,10 +41,16 @@ export default function () {
     try {
       await postFraseDoAnoApi(phrase, observation)
       toast('Frase Cadastrada! 😂😂')
+      setPhrase('')
+      setObservation('')
       Filtrar()
     } catch (error: any) {
       toast.error(error.response.data)
     }
+  }
+
+  function RedirecionarParaRanking () {
+    window.location.replace('http://localhost:3005/RankingDeFrases/rankingDeFrases')
   }
 
   // Cadastra um Voto na Frase
@@ -159,13 +165,15 @@ export default function () {
           <div className='Card-F2' key={index}>
             <h4 className='Card-F2-h4' title={item.phrase}> Frase - {item.phrase.length >= 35 ? item.phrase.substring(0, 35) + '...' : item.phrase}  </h4>
             <h4 className='Card-F2-h4' title={item.observation}> Observação - {item.observation.length >= 35 ? item.observation.substring(0, 30) + '...' : item.observation} </h4>
+            <h4 className='Card-F2-h4' title={item.creator}> Cadastrado por -  {item.creator.length >= 35 ? item.creator.substring(0, 35) + '...' : item.creator}  </h4>
+
             <h4 className='H4-Inclusion'> Data de Inclusão: {DateHelper.setDate(item.inclusion).format(DateFomartTypes.DateTimeInput)}</h4>
             <div>
               <img src='/iconedit.svg' onClick={() => onPressEdit(item)} />
               <img src='/icondelete.svg' alt='Remover ' onClick={async () => await RemoverFrase(item.id)} />
 
               {!item.idVotation &&
-                <img src='/iconamei.svg' onClick={async () => await VotarNaFrase(item.id)} />}
+                <img src='/iconCoracaoAzulzin.svg' onClick={async () => await VotarNaFrase(item.id)} />}
               {!!item.idVotation &&
                 <img src='/iconameiVermelho.svg' onClick={async () => await RemoverVoto(item.idVotation)} />}
 
@@ -196,6 +204,8 @@ export default function () {
             <input value={observation} onChange={e => setObservation(e.target.value)} type='text' maxLength={250} placeholder='Observação' />
           </div>
           <div className='Card-2-Faixa-3'> <button onClick={CadastrarFrase}> Cadastrar </button>
+            <button onClick={RedirecionarParaRanking}> Ranking 🏆</button>
+
           </div>
         </div>
 
