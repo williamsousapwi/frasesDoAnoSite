@@ -99,6 +99,12 @@
       100% { transform: rotate(360deg); }
     }
 
+    .Img-Sair-Ranking{
+        position: relative;
+        left: 45%;
+        top: -10%;
+        cursor: pointer;
+        }
 
     /*FONTES A SEREM USADAS */
 @font-face {

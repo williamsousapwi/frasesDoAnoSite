@@ -145,6 +145,7 @@ export default function () {
       <div className='Faixa-IMG'>
         <div className='Faixa1-Logo' />
       </div>
+      <img onClick={LogOut} className='Img-Sair' src='/logoutzada 1.svg' />
 
       <div className='Card-F1'>
         <div className='F1-Card-Pesquisa'>
@@ -161,8 +162,6 @@ export default function () {
           onKeyPress={e => e.key === 'Enter' ? Filtrar() : ''}
         >Consultar
         </button>
-        <img onClick={LogOut} className='Img-Sair' src='/logoutzada 1.svg' />
-
       </div>
 
       <section className='F1-Card'>

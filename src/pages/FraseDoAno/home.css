@@ -34,9 +34,8 @@ background-repeat: no-repeat;
 
 .Img-Sair{
 position: relative;
-left: 480px;
+left: 45%;
 cursor: pointer;
-
 }
 
 .Card-F1 button{
@@ -341,4 +340,3 @@ input{
     font-family: 'WebDings';
     src: url(../../../public/Assets/Fonts/Webdings-Regular.ttf)
 }
-

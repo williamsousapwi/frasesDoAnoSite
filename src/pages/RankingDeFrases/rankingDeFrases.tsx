@@ -28,6 +28,10 @@ export default function () {
     window.location.replace('http://localhost:3005/FraseDoAno/home')
   }
 
+  function LogOut () {
+    storage.remove('usuario-logado')
+    router.push('http://localhost:3005/LoginPage/login')
+  }
   useEffect(() => {
     if (!storage.get('usuario-logado')) {
       router.push('http://localhost:3005/LoginPage/login')
@@ -37,6 +41,8 @@ export default function () {
   return (
     <main className='RankingDeFrases-Main'>
       <div className='Div-Imagem'> <div className='Logo-Imagem' /> </div>
+      <img onClick={LogOut} className='Img-Sair-Ranking' src='/logoutzada 1.svg' />
+
       <section className='F1-Card-Ranking'>
         {frase.length === 0 && !loading &&
           <h1>Nenhuma frase foi encontrada...😞</h1>}
