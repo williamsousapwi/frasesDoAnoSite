@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 
 import { LogarUsuarioApi } from '@/services/FraseDoAnoService/api'
 import Storage from 'local-storage'
+import * as storage from 'local-storage'
 
 function RedirecionarParaCadastrar () {
   window.location.replace('http://localhost:3005/CadastroPage/cadastro')
@@ -12,6 +13,11 @@ function RedirecionarParaCadastrar () {
 
 export default function () {
   const router = useRouter()
+
+  if (storage.get('usuario-logado')) {
+    router.push('http://localhost:3005/FraseDoAno/home')
+  }
+
   const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
   const [loading, setLoading] = useState(false)

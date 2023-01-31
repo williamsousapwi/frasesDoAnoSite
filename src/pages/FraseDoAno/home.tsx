@@ -53,6 +53,11 @@ export default function () {
     window.location.replace('http://localhost:3005/RankingDeFrases/rankingDeFrases')
   }
 
+  function LogOut () {
+    storage.remove('usuario-logado')
+    router.push('http://localhost:3005/LoginPage/login')
+  }
+
   // Cadastra um Voto na Frase
   async function VotarNaFrase (idPhrase: number) {
     try {
@@ -76,29 +81,36 @@ export default function () {
 
   // Remove a frase pelo id que recebe ao clicar no icon.
   async function RemoverFrase (id: number) {
-    confirmAlert({
-      title: 'Remover frase',
-      message: 'Deseja remover a frase ?',
-      buttons: [
-        {
-          label: 'Sim',
-          onClick: async () => {
-            await deleteFraseDoAnoApi(id)
-            if (filtro === '') {
-              Filtrar()
-            } else {
-              Filtrar()
+    try {
+      confirmAlert({
+        title: 'Remover frase',
+        message: 'Deseja remover a frase ?',
+        buttons: [
+          {
+            label: 'Sim',
+            onClick: async () => {
+              try {
+                await deleteFraseDoAnoApi(id)
+                if (filtro === '') {
+                  Filtrar()
+                } else {
+                  Filtrar()
+                }
+                toast('Frase removida😅')
+              } catch (error: any) {
+                toast.error(error.response.data)
+              }
             }
-            toast('Frase removida😅')
+          },
+          {
+            label: 'Não'
           }
-        },
-        {
-          label: 'Não'
-        }
-      ]
-    })
+        ]
+      })
+    } catch (error: any) {
+      toast.error(error.response.data)
+    }
   }
-
   // Altera as informações da frase e observação.
   async function Alterar () {
     try {
@@ -149,6 +161,7 @@ export default function () {
           onKeyPress={e => e.key === 'Enter' ? Filtrar() : ''}
         >Consultar
         </button>
+        <img onClick={LogOut} className='Img-Sair' src='/logoutzada 1.svg' />
 
       </div>
 

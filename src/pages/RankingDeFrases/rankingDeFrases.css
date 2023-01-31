@@ -24,13 +24,19 @@
 .F1-Card-Ranking{
     display: flex;
     background-color: white;
-    width: 35em;
-    height: 25em;
+    width: 38em;
+    height: 30em;
     border-radius: 8px;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll
 }
+
+.F1-Card-Ranking h1{
+    font-family: 'Inter-Semi-Bold';
+    color:#015587;
+    font-size: 1.8em;
+    margin-bottom: 15px;}
 
 .F1-Card-Ranking::-webkit-scrollbar{
     width: 10px;
@@ -42,7 +48,6 @@
     background-color: #A4DDFF;
     border-radius: 5px;
 }
-
 
 .Load{
     border: 16px solid #f3f3f3;
@@ -68,8 +73,45 @@
     font-family: 'Inter-Semi-Bold';
     margin-left: 5px;
 }
+
+.button{
+    width:8em;
+    height: 2.4em;
+    color: white;
+    background-color: #286090;
+    border-radius: 15px;
+    border: solid 2px #015587;
+    cursor: pointer;
+    font-family: 'Inter-Semi-Bold';
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.button:hover{
+    transition: 0.3s; 
+    color: #286090;
+    opacity: 1;
+    background-color: white;
+  }
   
   @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+
+    /*FONTES A SEREM USADAS */
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-Bold.ttf)
+}
+
+@font-face {
+    font-family: 'Inter-Semi-Bold';
+    src: url(../../../public/Assets/Fonts/Inter-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: 'WebDings';
+    src: url(../../../public/Assets/Fonts/Webdings-Regular.ttf)
+}
