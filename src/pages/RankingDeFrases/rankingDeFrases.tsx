@@ -51,10 +51,10 @@ export default function () {
         {loading && <div className='Load' />}
         {!loading && frase.map((item, index) =>
           <div className='Card-F2' key={index}>
-            <h4 className='Card-F2-h4' title={item.phrase}> Frase - {item.phrase.length >= 35 ? item.phrase.substring(0, 35) + '...' : item.phrase}  </h4>
-            <h4 className='Card-F2-h4' title={item.observation}> Observação - {item.observation.length >= 35 ? item.observation.substring(0, 30) + '...' : item.observation} </h4>
-            <h4 className='Card-F2-h4' title={item.creator}> Cadastrado por - {item.creator.length >= 35 ? item.creator.substring(0, 35) + '...' : item.creator}  </h4>
-            <h4 className='Card-F2-h4'> Quantidade de Votos -  {item.qtdVotes}</h4>
+            <h4 className='Card-F2-h4' title={item.phrase}> <span>Frase:</span> {item.phrase.length >= 35 ? item.phrase.substring(0, 35) + '...' : item.phrase}  </h4>
+            <h4 className='Card-F2-h4' title={item.observation}><span>Observação:</span>{item.observation.length >= 35 ? item.observation.substring(0, 30) + '...' : item.observation} </h4>
+            <h4 className='Card-F2-h4' title={item.creator}> <span>Criado por:</span>{item.creator.length >= 35 ? item.creator.substring(0, 35) + '...' : item.creator}  </h4>
+            <h4 className='Card-F2-h4'> <span>Quantidade de Votos:</span>{item.qtdVotes}</h4>
           </div>
         )}
       </section>

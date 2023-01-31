@@ -36,7 +36,15 @@
     font-family: 'Inter-Semi-Bold';
     color:#015587;
     font-size: 1.8em;
-    margin-bottom: 15px;}
+    margin-bottom: 15px;
+}
+
+.Card-F2 span{
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    color: #1d4b73;    
+    font-family: 'Inter-Semi-Bold';
+}
 
 .F1-Card-Ranking::-webkit-scrollbar{
     width: 10px;

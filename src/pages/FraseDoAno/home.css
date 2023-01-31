@@ -36,10 +36,12 @@ background-repeat: no-repeat;
 position: relative;
 left: 45%;
 cursor: pointer;
+display: flex;
+flex-direction: row;
 }
 
 .Card-F1 button{
-        height: 2.5em;
+    height: 2.5em;
     color: black;
     background-color: white;
     border-radius: 7px;
@@ -146,6 +148,13 @@ input{
     color: white;  
     font-family: 'Inter-Semi-Bold';
     margin-left: 5px;
+}
+
+.Card-F2 span{
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    color: #1d4b73;    
+    font-family: 'Inter-Semi-Bold';
 }
 
 .Group-Info{
