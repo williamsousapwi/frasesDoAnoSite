@@ -5,7 +5,6 @@
     background: linear-gradient(to right, rgb(5,53,101),rgb(14,82,131),rgb(17,103,160), rgb(19,119,178));
     align-items:center;
 }
-
 .Div-Imagem{
     display: flex;
     width: 100vw;
@@ -25,12 +24,13 @@
     display: flex;
     background-color: white;
     width: 38em;
-    height: 30em;
+    height: 28em;
     border-radius: 8px;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll
 }
+
 
 .F1-Card-Ranking h1{
     font-family: 'Inter-Semi-Bold';
@@ -55,6 +55,14 @@
 .F1-Card-Ranking::-webkit-scrollbar-thumb{
     background-color: #A4DDFF;
     border-radius: 5px;
+}
+.Img-Sair-Ranking{
+    position: relative;
+    left: 45%;
+    top: -10%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .Load{
@@ -92,8 +100,9 @@
     cursor: pointer;
     font-family: 'Inter-Semi-Bold';
     opacity: 0.8;
-    margin-top: 5px;
+    margin-top: 10px;
 }
+
 
 .button:hover{
     transition: 0.3s; 
@@ -107,12 +116,8 @@
       100% { transform: rotate(360deg); }
     }
 
-    .Img-Sair-Ranking{
-        position: relative;
-        left: 45%;
-        top: -10%;
-        cursor: pointer;
-        }
+
+        
 
     /*FONTES A SEREM USADAS */
 @font-face {

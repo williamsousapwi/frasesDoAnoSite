@@ -37,7 +37,23 @@ position: relative;
 left: 45%;
 cursor: pointer;
 display: flex;
-flex-direction: row;
+flex-direction: column;
+}
+
+.Img-Sair h4{
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    color: white;  
+    font-family: 'Inter-Bold';
+    margin-left: 5px;
+}
+
+.Img-Sair-Ranking h4{
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    color: white;  
+    font-family: 'Inter-Bold';
+    margin-left: 5px;
 }
 
 .Card-F1 button{

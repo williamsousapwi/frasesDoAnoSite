@@ -147,8 +147,8 @@ export default function () {
       </div>
 
       <div className='Img-Sair'>
-
         <img onClick={LogOut} src='/logoutzada 1.svg' />
+        <h4> Log Out</h4>
       </div>
 
       <div className='Card-F1'>

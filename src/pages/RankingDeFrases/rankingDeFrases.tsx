@@ -41,7 +41,11 @@ export default function () {
   return (
     <main className='RankingDeFrases-Main'>
       <div className='Div-Imagem'> <div className='Logo-Imagem' /> </div>
-      <img onClick={LogOut} className='Img-Sair-Ranking' src='/logoutzada 1.svg' />
+
+      <div className='Img-Sair-Ranking'>
+        <img onClick={LogOut} src='/logoutzada 1.svg' />
+        <h4> Log Out</h4>
+      </div>
 
       <section className='F1-Card-Ranking'>
         {frase.length === 0 && !loading &&
